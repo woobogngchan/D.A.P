@@ -1,4 +1,4 @@
 package domain.teacher.entity;
 
-public class TeacherEntity {
+public class Teacher {
 }
