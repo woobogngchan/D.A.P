@@ -1,4 +1,8 @@
 package domain.student.service;
 
-public class StudentService {
+import domain.student.dto.StudentRequestDto;
+import domain.student.dto.StudentResponseDto;
+
+public interface StudentService {
+    String studentJoin(StudentRequestDto.StudentJoin studentJoin);
 }

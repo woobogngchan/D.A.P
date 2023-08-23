@@ -24,7 +24,7 @@ public class Teacher {
     private int age;
 
     @Column(nullable = false)
-    private String janre;
+    private TeacherJanre janre;
 
     @Column
     private String originalTeacherImage;
@@ -33,9 +33,10 @@ public class Teacher {
     private Long teacherImageSize;
 
     @Column
+    @OneToMany
     private String teacherImage;
 
-    public Teacher(String teacherName, String nickName, int age, String janre, String originalTeacherImage, Long teacherImageSize, String teacherImage) {
+    public Teacher(String teacherName, String nickName, int age, TeacherJanre janre, String originalTeacherImage, Long teacherImageSize, String teacherImage) {
         this.teacherName = teacherName;
         this.nickName = nickName;
         this.age = age;
