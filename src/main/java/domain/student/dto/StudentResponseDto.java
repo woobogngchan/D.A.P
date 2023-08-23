@@ -1,4 +1,4 @@
 package domain.student.dto;
 
-public class StudentDto {
+public class ResponseDto {
 }
