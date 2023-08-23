@@ -1,7 +1,6 @@
 package domain.student.serviceimpl;
 
 import domain.student.dto.StudentRequestDto;
-import domain.student.dto.StudentResponseDto;
 import domain.student.entity.Student;
 import domain.student.repository.StudentRepository;
 import domain.student.service.StudentService;
@@ -28,5 +27,14 @@ public class StudentServiceImpl implements StudentService {
         studentRepository.save(student);
 
         return "회원가입 완료!!";
+    }
+
+    @Override
+    public String studentLogin(StudentRequestDto.StudentLogin studentLogin) {
+
+       Student student = studentRepository.findByStudentIdAndPassword(studentLogin.getStudentId(), studentLogin.getStudentPassword()).orElseThrow(() -> new IllegalArgumentException());
+
+
+        return "로그인 되었습니다.";
     }
 }

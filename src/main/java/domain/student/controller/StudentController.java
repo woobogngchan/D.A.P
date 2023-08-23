@@ -19,4 +19,12 @@ public class StudentController {
     public String studentJoin(StudentRequestDto.StudentJoin studentJoin){
         return studentService.studentJoin(studentJoin);
     }
+
+    @GetMapping("/api/stdent/login")
+    public String studentLogin(StudentRequestDto.StudentLogin studentLogin){
+
+        return studentService.studentLogin(studentLogin);
+
+    }
+
 }

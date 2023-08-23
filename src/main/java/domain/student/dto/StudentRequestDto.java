@@ -5,7 +5,7 @@ import lombok.Getter;
 
 public class StudentRequestDto {
     @Getter
-    public class StudentJoin{
+    public static class StudentJoin{
         private String studentId;
         private String studentPassword;
         private String studentName;
@@ -21,4 +21,17 @@ public class StudentRequestDto {
             this.phoneNum = phoneNum;
         }
     }
+    @Getter
+    public static class StudentLogin{
+
+        private String studentId;
+        private String studentPassword;
+
+        public StudentLogin(String studentId, String studentPassword) {
+            this.studentId = studentId;
+            this.studentPassword = studentPassword;
+        }
+    }
+
+
 }
