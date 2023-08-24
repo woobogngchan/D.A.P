@@ -1,6 +1,6 @@
-package domain.student.repository;
+package com.hk2.dap.domain.student.repository;
 
-import domain.student.entity.Student;
+import com.hk2.dap.domain.student.entity.Student;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

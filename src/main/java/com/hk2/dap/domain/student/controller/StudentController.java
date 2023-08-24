@@ -1,8 +1,8 @@
-package domain.student.controller;
+package com.hk2.dap.domain.student.controller;
 
-import domain.student.dto.StudentRequestDto;
-import domain.student.dto.StudentResponseDto;
-import domain.student.service.StudentService;
+import com.hk2.dap.domain.student.dto.StudentRequestDto;
+import com.hk2.dap.domain.student.dto.StudentResponseDto;
+import com.hk2.dap.domain.student.service.StudentService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;

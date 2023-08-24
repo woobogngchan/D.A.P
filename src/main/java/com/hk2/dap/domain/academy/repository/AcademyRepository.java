@@ -1,4 +1,4 @@
-package domain.academy.repository;
+package com.hk2.dap.domain.academy.repository;
 
 import org.springframework.stereotype.Repository;
 

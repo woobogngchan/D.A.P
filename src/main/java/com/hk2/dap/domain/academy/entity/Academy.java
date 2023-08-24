@@ -1,4 +1,4 @@
-package domain.academy.entity;
+package com.hk2.dap.domain.academy.entity;
 
 import lombok.Builder;
 import lombok.Getter;

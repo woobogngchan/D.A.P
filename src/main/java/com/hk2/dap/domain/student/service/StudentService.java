@@ -1,7 +1,7 @@
-package domain.student.service;
+package com.hk2.dap.domain.student.service;
 
-import domain.student.dto.StudentRequestDto;
-import domain.student.dto.StudentResponseDto;
+import com.hk2.dap.domain.student.dto.StudentRequestDto;
+import com.hk2.dap.domain.student.dto.StudentResponseDto;
 
 public interface StudentService {
     String studentJoin(StudentRequestDto.StudentJoin studentJoin);

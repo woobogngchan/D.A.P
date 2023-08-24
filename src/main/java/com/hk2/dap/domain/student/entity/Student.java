@@ -1,4 +1,4 @@
-package domain.student.entity;
+package com.hk2.dap.domain.student.entity;
 
 import lombok.Builder;
 import lombok.Getter;

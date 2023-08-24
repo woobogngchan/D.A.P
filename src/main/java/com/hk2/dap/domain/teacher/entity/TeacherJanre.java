@@ -1,4 +1,4 @@
-package domain.teacher.entity;
+package com.hk2.dap.domain.teacher.entity;
 
 public enum TeacherJanre {
     HIPHOP, KPOP, POPPIN, WAACKING, KRUMP, LOCKING,

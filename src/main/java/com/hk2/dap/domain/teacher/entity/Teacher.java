@@ -1,4 +1,4 @@
-package domain.teacher.entity;
+package com.hk2.dap.domain.teacher.entity;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

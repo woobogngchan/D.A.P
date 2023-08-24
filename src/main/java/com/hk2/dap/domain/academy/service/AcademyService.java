@@ -1,4 +1,4 @@
-package domain.academy.service;
+package com.hk2.dap.domain.academy.service;
 
 import org.springframework.stereotype.Service;
 

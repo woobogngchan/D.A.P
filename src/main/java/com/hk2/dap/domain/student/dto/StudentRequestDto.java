@@ -1,6 +1,6 @@
-package domain.student.dto;
+package com.hk2.dap.domain.student.dto;
 
-import domain.student.entity.StudentType;
+import com.hk2.dap.domain.student.entity.StudentType;
 import lombok.Getter;
 
 public class StudentRequestDto {

@@ -1,9 +1,9 @@
-package domain.student.serviceimpl;
+package com.hk2.dap.domain.student.serviceimpl;
 
-import domain.student.dto.StudentRequestDto;
-import domain.student.entity.Student;
-import domain.student.repository.StudentRepository;
-import domain.student.service.StudentService;
+import com.hk2.dap.domain.student.dto.StudentRequestDto;
+import com.hk2.dap.domain.student.entity.Student;
+import com.hk2.dap.domain.student.repository.StudentRepository;
+import com.hk2.dap.domain.student.service.StudentService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
