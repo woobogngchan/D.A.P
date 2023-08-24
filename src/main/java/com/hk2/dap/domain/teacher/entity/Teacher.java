@@ -33,7 +33,6 @@ public class Teacher {
     private Long teacherImageSize;
 
     @Column
-    @OneToMany
     private String teacherImage;
 
     public Teacher(String teacherName, String nickName, int age, TeacherJanre janre, String originalTeacherImage, Long teacherImageSize, String teacherImage) {
