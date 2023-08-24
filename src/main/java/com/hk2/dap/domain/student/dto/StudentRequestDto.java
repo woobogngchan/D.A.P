@@ -23,7 +23,6 @@ public class StudentRequestDto {
     }
     @Getter
     public static class StudentLogin{
-
         private String studentId;
         private String studentPassword;
 
