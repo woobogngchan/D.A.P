@@ -31,10 +31,7 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     public String studentLogin(StudentRequestDto.StudentLogin studentLogin) {
-
-       Student student = studentRepository.findByStudentIdAndPassword(studentLogin.getStudentId(), studentLogin.getStudentPassword()).orElseThrow(() -> new IllegalArgumentException());
-
-
-        return "로그인 되었습니다.";
+       Student student = studentRepository.findByStudentIdAndStudentPassword(studentLogin.getStudentId(), studentLogin.getStudentPassword()).orElseThrow(() -> new IllegalArgumentException());
+       return "로그인 되었습니다.";
     }
 }
