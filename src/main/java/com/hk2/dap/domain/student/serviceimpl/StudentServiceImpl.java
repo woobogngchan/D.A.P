@@ -13,6 +13,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 @RequiredArgsConstructor
 public class StudentServiceImpl implements StudentService {
@@ -29,6 +31,12 @@ public class StudentServiceImpl implements StudentService {
                  .nickName(studentJoin.getNickName())
                  .phoneNum(studentJoin.getPhoneNum())
                  .build();
+        Optional<Student> studentId = studentRepository.findByStudentId((studentJoin.getStudentId()));
+
+        if(studentId.isPresent()){
+            throw new CustomException(ErrorCode.DUPLICATE_EMAIL);
+        };
+
         studentRepository.save(student);
 
         return MessageDto.toResponseEntity(SuccessCode.JOIN_SUCCESS);
