@@ -1,4 +1,4 @@
-package com.hk2.dap.util;
+package com.hk2.dap.util.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

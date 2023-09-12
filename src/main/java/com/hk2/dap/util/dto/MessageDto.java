@@ -2,19 +2,27 @@ package com.hk2.dap.util.dto;
 
 import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import org.springframework.http.ResponseEntity;
 
 @Getter
-public class MessageDto {
-    private final String message;
-    private final String code;
-    private final int statusCode;
+public class MessageDto extends RuntimeException{
+    private String message;
+    private String code;
+    private int statusCode;
+
+    private ErrorCode errorCode;
 
     @Builder
     public MessageDto(String message, String code, int statusCode) {
         this.message = message;
         this.code = code;
         this.statusCode = statusCode;
+    }
+
+    @Builder
+    public MessageDto (ErrorCode errorCode) {
+        this.errorCode = errorCode;
     }
 
     public static MessageDto of(SuccessCode successCode) {
