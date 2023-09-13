@@ -18,7 +18,7 @@ public class Academy {
     private String academyId;
 
     @Column(nullable = false)
-    private String academyPw;
+    private String academyPassword;
 
     @Column(nullable = false)
     private String academyName;
@@ -36,11 +36,11 @@ public class Academy {
     private String academyPhoneNum;
 
     @Builder
-    public Academy(String academyId, String academyPw, String academyInfo, String academyName, String academyPhoneNum, AcademyCiyEnum city, AcademyDistrictEnum district){
+    public Academy(String academyId, String academyPassword, String academyInfo, String academyName, String academyPhoneNum, AcademyCiyEnum city, AcademyDistrictEnum district){
         this.academyId = academyId;
         this.academyInfo = academyInfo;
         this.academyName = academyName;
-        this.academyPw = academyPw;
+        this.academyPassword = academyPassword;
         this.academyPhoneNum = academyPhoneNum;
         this.city = city;
         this.district = district;

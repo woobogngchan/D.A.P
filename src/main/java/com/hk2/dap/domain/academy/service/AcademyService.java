@@ -1,7 +1,12 @@
 package com.hk2.dap.domain.academy.service;
 
-import org.springframework.stereotype.Service;
+import com.hk2.dap.domain.academy.dto.AcademyRequestDto;
+import com.hk2.dap.util.dto.MessageDto;
+import org.springframework.http.ResponseEntity;
 
-@Service
-public class AcademyService {
+public interface AcademyService {
+
+    ResponseEntity<MessageDto> academyJoin(AcademyRequestDto.AcademyJoin academyJoin);
+
+    ResponseEntity<MessageDto> academyLogin(AcademyRequestDto.AcademyLogin academyLogin);
 }
