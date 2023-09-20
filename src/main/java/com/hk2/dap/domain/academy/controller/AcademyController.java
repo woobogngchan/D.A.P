@@ -26,4 +26,11 @@ public class AcademyController {
 
     }
 
+    @GetMapping("/api/academy/lesson")
+    public ResponseEntity<MessageDto> lessonCreate(AcademyRequestDto.LessonCreate lessonCreate){
+
+        return academyService.lessonCreate(lessonCreate);
+
+    }
+
 }

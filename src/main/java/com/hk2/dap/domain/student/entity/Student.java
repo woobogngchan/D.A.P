@@ -1,11 +1,15 @@
 package com.hk2.dap.domain.student.entity;
 
+import com.hk2.dap.domain.academy.entity.Academy;
+import com.hk2.dap.domain.lesson.entity.Lesson;
+import com.hk2.dap.domain.lesson.entity.LessonStudent;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Getter
@@ -33,6 +37,9 @@ public class Student {
 
     @Column(nullable = false)
     private String phoneNum;
+
+    @ManyToMany(mappedBy = "student", cascade = CascadeType.REMOVE, fetch = FetchType.LAZY)
+    private List<LessonStudent> lessonList;
 
     @Builder
     public Student(Long id, String studentId, String studentPassword, String studentName, String nickName, StudentType studentType, String phoneNum) {

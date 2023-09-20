@@ -6,6 +6,8 @@ import com.hk2.dap.domain.academy.entity.AcademyCiyEnum;
 import com.hk2.dap.domain.academy.entity.AcademyDistrictEnum;
 import com.hk2.dap.domain.academy.repository.AcademyRepository;
 import com.hk2.dap.domain.academy.service.AcademyService;
+import com.hk2.dap.domain.lesson.entity.Lesson;
+import com.hk2.dap.domain.lesson.repository.LessonRepository;
 import com.hk2.dap.util.dto.ErrorCode;
 import com.hk2.dap.util.dto.MessageDto;
 import com.hk2.dap.util.dto.SuccessCode;
@@ -20,6 +22,8 @@ import java.util.Optional;
 public class AcademyServiceImpl implements AcademyService {
 
     private final AcademyRepository academyRepository;
+    private final LessonRepository lessonRepository;
+
 
     @Override
     public ResponseEntity<MessageDto> academyJoin(AcademyRequestDto.AcademyJoin academyJoin) {
@@ -52,5 +56,26 @@ public class AcademyServiceImpl implements AcademyService {
         return ResponseEntity.ok()
                // .headers(headers)
                 .body(MessageDto.of(SuccessCode.LOGIN_SUCCESS));
+    }
+
+    @Override
+    public ResponseEntity<MessageDto> lessonCreate(AcademyRequestDto.LessonCreate lessonCreate) {
+        Optional<Lesson> lesson = lessonRepository.findByLessonName(lessonCreate.getLessonName());
+
+        if(lesson.isPresent()){
+            throw new MessageDto(ErrorCode.INVALID_CODE);
+        }
+
+        Lesson lesons = Lesson.builder()
+                .janre(lessonCreate.getJanre())
+                .lessonName(lessonCreate.getLessonName())
+                .lessonTimeEnum(lessonCreate.getLessonTimeEnum())
+                .lessonDay(lessonCreate.getLessonDay())
+                .lessonInfo(lessonCreate.getLessonInfo())
+                .person(lessonCreate.getPerson())
+                .build();
+
+        return ResponseEntity.ok()
+                .body(MessageDto.of(SuccessCode.VALID_CODE));
     }
 }

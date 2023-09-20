@@ -9,4 +9,6 @@ public interface AcademyService {
     ResponseEntity<MessageDto> academyJoin(AcademyRequestDto.AcademyJoin academyJoin);
 
     ResponseEntity<MessageDto> academyLogin(AcademyRequestDto.AcademyLogin academyLogin);
+
+    ResponseEntity<MessageDto> lessonCreate(AcademyRequestDto.LessonCreate lessonCreate);
 }

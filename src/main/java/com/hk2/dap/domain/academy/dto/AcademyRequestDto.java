@@ -2,7 +2,12 @@ package com.hk2.dap.domain.academy.dto;
 
 import com.hk2.dap.domain.academy.entity.AcademyCiyEnum;
 import com.hk2.dap.domain.academy.entity.AcademyDistrictEnum;
+import com.hk2.dap.domain.lesson.entity.LessonJanreEnum;
+import com.hk2.dap.domain.lesson.entity.LessonTimeEnum;
 import lombok.Getter;
+
+import javax.persistence.Column;
+import java.sql.Timestamp;
 
 public class AcademyRequestDto {
     @Getter
@@ -39,6 +44,31 @@ public class AcademyRequestDto {
             this.academyPassword = academyPassword;
         }
 
+    }
+
+    @Getter
+    public static class LessonCreate{
+
+        private String lessonName;
+
+        private int person;
+
+        private String lessonInfo;
+
+        private LessonJanreEnum janre;
+
+        private LessonTimeEnum lessonTimeEnum;
+
+        private Timestamp lessonDay;
+
+        public LessonCreate(String lessonName, int person, String lessonInfo, LessonJanreEnum janre, LessonTimeEnum lessonTimeEnum, Timestamp lessonDay) {
+            this.lessonName = lessonName;
+            this.person = person;
+            this.lessonInfo = lessonInfo;
+            this.janre = janre;
+            this.lessonTimeEnum = lessonTimeEnum;
+            this.lessonDay = lessonDay;
+        }
     }
 
 
