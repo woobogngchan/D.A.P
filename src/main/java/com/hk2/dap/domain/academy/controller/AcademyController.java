@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class AcademyController {
 
     private final AcademyService academyService;
-    @GetMapping("/api/academy")
+    @GetMapping("/api/academy/join")
     public ResponseEntity<MessageDto> academyJoin(AcademyRequestDto.AcademyJoin academyJoin){
 
         return academyService.academyJoin(academyJoin);
