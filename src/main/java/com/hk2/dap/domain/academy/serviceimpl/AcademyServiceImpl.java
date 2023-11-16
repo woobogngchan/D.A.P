@@ -70,7 +70,7 @@ public class AcademyServiceImpl implements AcademyService {
                 .janre(lessonCreate.getJanre())
                 .lessonName(lessonCreate.getLessonName())
                 .lessonTimeEnum(lessonCreate.getLessonTimeEnum())
-                .lessonDay(lessonCreate.getLessonDay())
+//                .lessonDay(lessonCreate.getLessonDay())
                 .lessonInfo(lessonCreate.getLessonInfo())
                 .person(lessonCreate.getPerson())
                 .build();

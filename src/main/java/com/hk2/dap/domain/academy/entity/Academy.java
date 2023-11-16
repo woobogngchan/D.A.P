@@ -9,8 +9,8 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@NoArgsConstructor
 @Getter
+@NoArgsConstructor
 public class Academy {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

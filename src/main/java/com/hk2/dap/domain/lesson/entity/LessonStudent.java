@@ -1,6 +1,6 @@
 package com.hk2.dap.domain.lesson.entity;
 
-import com.hk2.dap.domain.student.entity.Student;
+import com.hk2.dap.domain.user.entity.User;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
@@ -14,15 +14,15 @@ public class LessonStudent {
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "student_id", nullable = false)
-    private Student student;
+    @JoinColumn(name = "userId", nullable = false)
+    private User user;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "lesson_id", nullable = false)
+    @JoinColumn(name = "lessonId", nullable = false)
     private Lesson lesson;
 
-    public LessonStudent(Student student, Lesson lesson) {
-        this.student = student;
+    public LessonStudent(User user, Lesson lesson) {
+        this.user = user;
         this.lesson = lesson;
     }
 }

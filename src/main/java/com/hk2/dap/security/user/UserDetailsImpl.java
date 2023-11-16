@@ -1,7 +1,7 @@
 package com.hk2.dap.security.user;
 
 
-import com.hk2.dap.domain.student.entity.Student;
+import com.hk2.dap.domain.user.entity.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -9,16 +9,16 @@ import java.util.Collection;
 
 public class UserDetailsImpl implements UserDetails {
 
-    private final Student student;
+    private final User user;
     private final String username;
 
-    public UserDetailsImpl(Student student, String username) {
-        this.student = student;
+    public UserDetailsImpl(User user, String username) {
+        this.user = user;
         this.username = username;
     }
 
-    public Student getUser() {
-        return student;
+    public User getUser() {
+        return user;
     }
 
     @Override
