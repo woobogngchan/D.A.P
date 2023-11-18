@@ -1,5 +1,6 @@
 package com.hk2.dap.security.jwt;
 
+import com.hk2.dap.security.user.JwtRoleEnum;
 import com.hk2.dap.security.user.UserDetailsServiceImpl;
 import io.jsonwebtoken.*;
 import io.jsonwebtoken.security.Keys;
@@ -54,13 +55,13 @@ public class JwtUtil {
     }
 
     // 토큰 생성
-    public String createToken(String email) {
+    public String createToken(String id, JwtRoleEnum role) {
         Date date = new Date();
 
         return BEARER_PREFIX +
                 Jwts.builder()
-                        .setSubject(email)
-//                        .claim(AUTHORIZATION_KEY, role)
+                        .setSubject(id)
+                        .claim(AUTHORIZATION_KEY, role)
                         .setExpiration(new Date(date.getTime() + TOKEN_TIME))
                         .setIssuedAt(date)
                         .signWith(key, signatureAlgorithm)
@@ -104,7 +105,6 @@ public class JwtUtil {
     public Claims getUserInfoFromToken(String token) {
         return Jwts.parserBuilder().setSigningKey(key).build().parseClaimsJws(token).getBody();
     }
-
 
     public Authentication createAuthentication(String email) {
         UserDetails userDetails = memberDetailsService.loadUserByUsername(email);

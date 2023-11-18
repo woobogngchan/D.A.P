@@ -5,6 +5,7 @@ import com.hk2.dap.domain.user.entity.User;
 import com.hk2.dap.domain.user.repository.UserRepository;
 import com.hk2.dap.domain.user.service.UserService;
 import com.hk2.dap.security.jwt.JwtUtil;
+import com.hk2.dap.security.user.JwtRoleEnum;
 import com.hk2.dap.util.dto.ErrorCode;
 import com.hk2.dap.util.dto.MessageDto;
 import com.hk2.dap.util.dto.SuccessCode;
@@ -58,10 +59,20 @@ public class UserServiceImpl implements UserService {
             throw new MessageDto(ErrorCode.DUPLICATE_EMAIL);
 
         HttpHeaders headers = new HttpHeaders();
-        headers.set(JwtUtil.AUTHORIZATION_HEADER, jwtUtil.createToken(user.getUserId()));
+        headers.set(JwtUtil.AUTHORIZATION_HEADER, jwtUtil.createToken(user.getUserId(), JwtRoleEnum.USER));
 
         return ResponseEntity.ok()
                 .headers(headers)
                 .body(MessageDto.of(SuccessCode.LOGIN_SUCCESS));
+    }
+
+    @Override
+    public ResponseEntity<MessageDto> userDelete(User user, UserRequestDto.UserDelete userDelete) {
+        if (!passwordEncoder.matches(userDelete.getUserPassword(), user.getUserPassword()))
+            throw new MessageDto(ErrorCode.DUPLICATE_EMAIL);
+
+        userRepository.delete(user);
+        return ResponseEntity.ok()
+                .body(MessageDto.of(SuccessCode.DELETE_SUCCESS));
     }
 }

@@ -33,5 +33,13 @@ public class UserRequestDto {
         }
     }
 
+    @Getter
+    public static class UserDelete{
+        private String userPassword;
+
+        public UserDelete(String userPassword) {
+            this.userPassword = userPassword;
+        }
+    }
 
 }
